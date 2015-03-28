@@ -1,0 +1,41 @@
+doctype 5
+html
+	head
+		title #{Title}
+		meta[name="viewport"][content="width=device-width, initial-scale=1.0"]
+		block stylesheets
+
+	body
+		nav
+			div.nav-wrapper.container
+				a.brand-logo[href="/"] 中国边防
+				a.button-collapse[href="#"][data-activates="mobile"]
+					i.mdi-navigation-menu
+				ul#nav-mobile.right.hide-on-med-and-down
+					li
+						a[href="/admin"] 控制台
+
+		block content
+
+		footer.page-footer
+			div.container
+				div.row
+					div.col.s12.l6
+						h5.white-text 帮助网站进步
+						p.grey-text.text-lighten-4 欢迎广大读者将此网站分享给更多的人。
+						img[width="100px"][src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=180x180&choe=UTF-8&chld=L|2"]
+					div.col.s12.l4.offset-l2
+						h5.white-text 关于作者
+						ul
+							li
+								a.grey-text.text-lighten-3[href="http://blog.duyizhuo.com"] 杜艺卓
+							li
+								a.grey-text.text-lighten-3[href="#!"] Github
+			div.footer-copyright
+				div.container
+					© 2015 Copyright 巴彦淖尔边防支队
+
+		script[type="text/javascript"][src="/static/bower_components/jquery/dist/jquery.min.js"]
+		script[type="text/javascript"][src="/static/bower_components/materialize/dist/js/materialize.min.js"]
+		script[type="text/javascript"][src="/static/js/global.js"]
+		block scripts

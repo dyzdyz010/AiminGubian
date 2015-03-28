@@ -1,0 +1,42 @@
+extends admin-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/admin-section.css"]
+
+block content
+	div.container
+		h2 板块
+		div.section
+			h3 #{SectionTitle}
+
+			table.bordered
+				thead
+					tr
+						th 名称
+						th 日期
+						th 操作
+				tbody
+					tr
+						td
+							a[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td 2014-03-04
+						td
+							a 删除
+					tr
+						td
+							a[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td 2014-03-04
+						td
+							a 删除
+					tr
+						td
+							a[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td 2014-03-04
+						td
+							a 删除
+					tr
+						td
+							a[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td 2014-03-04
+						td
+							a 删除

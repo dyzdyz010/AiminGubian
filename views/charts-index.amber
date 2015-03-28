@@ -1,0 +1,56 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/index.css"]
+
+block content
+	div.section
+		br
+		br
+		div.container
+			h1.center.orange-text 爱民固边直通车数据统计
+
+	div.section
+		br
+		br
+
+		div.container
+			div.row
+				div.col.s12.m9.l10
+					div#moneyCharts.section.scrollspy
+						h3
+							a.orange-text[href="#"] 金额统计
+						div.section
+							div.row
+								div.col.s12
+									div#chartProfitContainer
+						br
+						br
+						div.section
+							div.row
+								div.col.s12
+									div#chartCostContainer
+
+					div#otherCharts.section.scrollspy
+						br
+						br
+						div.section
+							div.row
+								div.col.s12
+									div#chartDistanceContainer
+
+				div.col.hide-on-small-only.m3.l2.pinmenu
+					ul.section.table-of-contents
+						li
+							a[href="#moneyCharts"] 金额统计
+						li
+							a[href="#otherCharts"] 其他数据
+		div#chartsdata.hidden[data-charts=$.ChartsData]
+
+block scripts
+	script[type="text/javascript"][src="/static/js/DevExtreme/globalize.min.js"]
+	script[type="text/javascript"][src="/static/js/DevExtreme/dx.chartjs.js"]
+	script[type="text/javascript"][src="/static/js/DevExtreme/dx.module-widgets-base.js"]
+	script[type="text/javascript"][src="/static/js/DevExtreme/dx.module-widgets-web.js"]
+	script[type="text/javascript"][src="/static/js/DevExtreme/dx.chartjs.js"]
+	script[type="text/javascript"][src="/static/js/charts-index.js"]

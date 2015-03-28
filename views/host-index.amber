@@ -1,0 +1,43 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/index.css"]
+
+block content
+	div.section
+		div.container
+			br
+			br
+			h1.center.orange-text #{Data.title}
+
+	div.section
+		br
+		br
+		div.container
+			div.row
+				div.col.s12.m9.l10
+					each $i, $b in Data.blocks
+						div.section.scrollspy[id=$b.pinmenuid]
+							h3
+								a.orange-text[href="#"] #{$b.title}
+							each $j, $s in $b.subs
+								div.row
+									div.card
+										if $s.image.category
+											div.card-image
+												if $s.image.category=="image"
+													img[src=$s.image.content]
+												else
+													| #{unescaped($s.image.content)}
+										div.card-content
+											span.card-title.orange-text #{$s.title}
+											p #{$s.text}
+				div.col.hide-on-small-only.m3.l2.pinmenu
+					ul.section.table-of-contents
+						each $i, $b in Data.blocks
+							li
+								a[href="#"+$b.pinmenuid] #{$b.shorttitle}
+
+block scripts
+	script[type="text/javascript"][src="http://api.map.baidu.com/api?v=2.0&ak=XIXwYcH6e52Smoao8GWYsFum"]
+	script[type="text/javascript"][src="/static/js/host-index.js"]

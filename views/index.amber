@@ -1,0 +1,86 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/index.css"]
+
+block content
+	div.header.valign-wrapper
+		div.container
+			h1.center.orange-text 巴彦淖尔市爱民固边直通车
+			div.row.center
+				h5.col.s12 继承发扬爱民传统 携手共筑北疆长城
+
+	div.container
+		div.section
+			div.row.section-1
+				div.col.s12.block
+					ul.collection.with-header
+						li.collection-header
+							h5 #{index(Sections, 0).name}
+								a.secondary-content.more-link[href="#!"] 更多
+						each $e in index(Entries, 0)
+							li.collection-item
+								div.row
+									a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
+									a.secondary-content #{$e.Date}
+			
+		div.section
+			div.card
+				div.card-content
+					span.card-title.orange-text 生活广播台
+					p #{Broadcast}
+
+		div.section
+			div.row.section-2
+				$entriesArr = Entries
+				each $i, $s in Sections
+					if $i != 0 
+						div.col.s12.m6.block
+							ul.collection.with-header
+								li.collection-header
+									h5 #{$s.name}
+										a.secondary-content.more-link[href="#!"] 更多
+									//- h4 #{$entriesArr}
+								each $e in index($entriesArr, $i)
+									li.collection-item
+										div.row
+											a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
+											a.secondary-content #{$e.Date}
+
+
+		div.section
+			div.row
+				div.col.s6.m4
+					a.teal-text.gallery-link[href="/gallery"]
+						h2.center
+							i.mdi-image-collections
+					h4.center 工作剪影
+				div.col.s6.m4
+					a.charts-link[href="/express/charts"]
+						h2.center
+							i.mdi-editor-insert-chart
+					h4.center 数据统计
+				div.col.s6.m4
+					a.red-text[href="#!"]
+						h2.center
+							i.mdi-action-assignment
+					h4.center 走访纪录
+				//- div.col.s12.m6
+				//- 	h2.center.light-blue-text
+				//- 		i.mdi-action-account-balance
+				//- 	h5.center 巴音前达门边防派出所
+				//- 	p.light[style="height: 132px;"] “爱民固边直通车”服务工作开展以来，巴音前达门边防派出所把与群众互动作为创新社会管理工作的重要着力点，努力推动了边防辖区维稳工作。
+				//- 	div.row.center
+				//- 		br
+				//- 		a.btn-large.orange[href="/host"] 了解更多
+				//- div.col.s12.m6
+				//- 	h2.center.light-blue-text
+				//- 		i.mdi-maps-directions-bus
+				//- 	h5.center 爱民固边直通车
+				//- 	p.light[style="height: 132px;"] “爱民固边直通车”由乌拉特后旗旗委、政府主导，在乌后旗公安边防大队及巴音前达门苏木党委政府的领导下，以公安边防派出所为主要实施单位，以深化“爱民固边战略”及“北疆基层党建长廊”为出发点，本着为民、利民、便民的原则，以巡边控边、掌握社情民意、排查化解矛盾纠纷、解决辖区群众生产生活实际困难为工作目标。
+				//- 	div.row.center
+				//- 		br
+				//- 		a.btn-large.orange[href="/express"] 了解更多
+
+block scripts
+	script[type="text/javascript"][src="/static/js/index.js"]

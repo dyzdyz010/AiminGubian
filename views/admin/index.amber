@@ -1,0 +1,69 @@
+extends admin-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/admin-index.css"]
+
+block content
+	div.container
+		h2.orange-text.center 控制面板
+
+		div.section
+			h4 所有文章
+				span.secondary-content
+					h5
+						a[href="/admin/entries/new"] 添加
+
+			if len(Entries)>0
+				table.bordered
+					thead
+						tr
+							th 名称
+							th 日期
+							th 板块
+							th 状态
+							th 操作
+					tbody
+						$sections = Sections
+						each $e in Entries
+							tr
+								td
+									a.truncate[href="/admin/entries/"+$e.Id] #{$e.Title}
+								td #{$e.Date}
+								$key = $e.Section
+								each $s in $sections
+									if $s.id == $e.Section
+										td #{$s.name}
+								td #{$e.Status}
+								td
+									a[href="/admin/entries/delete?id="+$e.Id] 删除
+			else
+				h5.center 没有内容。
+			//- div.pagination
+			//- 	a.newer[href="#!"]
+			//- 		i.mdi-hardware-keyboard-arrow-left
+			//- 	a.older[href="#!"]
+			//- 		i.mdi-hardware-keyboard-arrow-right
+
+		div.section
+			h4 广播
+			br
+			form[action="/admin/broadcast"][method="POST"]
+				div.input-field.col.s12
+					textarea#content.materialize-textarea[name="broadcast"] #{Broadcast}
+					label[for="content"] 内容
+				input.btn[type="submit"] 提交
+
+		div.section
+			div.row
+				div.col.s6
+					a
+						h1.center
+							i.mdi-editor-insert-photo
+					h5.center 添加图片
+				div.col.s6
+					a
+						h1.center
+							i.mdi-action-assignment
+					h5.center 添加表格
+
+

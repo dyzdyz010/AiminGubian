@@ -1,0 +1,20 @@
+// @media #{$medium-and-up} {
+//   .container {
+//     width: 90%;
+//   }
+// }
+
+
+.pagination {
+	a {
+		font-size: 44px;
+	}
+	.older {
+		float: right;
+	}
+	width: 100%;
+}
+
+footer.page-footer {
+	margin-top: 100px;
+}

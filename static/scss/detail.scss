@@ -1,0 +1,14 @@
+@import "materialize";
+@import "global";
+
+.detail {
+	.meta {
+		color: #26a69a;
+		span {
+			margin-left: 20px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

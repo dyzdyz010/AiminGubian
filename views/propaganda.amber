@@ -1,0 +1,29 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/index.css"]
+
+block content
+	div.section
+		br
+		br
+		div.container
+			h1.center.orange-text 宣传成果
+
+	div.section
+		br
+		br
+		div.container
+			table.responsive-table.bordered.hoverable
+				thead
+					tr
+						th 标题
+						th 日期
+				tbody
+					each $i, $n in News
+						tr
+							td.truncate
+								a[href=$n.url] #{$n.title}
+							td #{$n.date}
+
+block scripts

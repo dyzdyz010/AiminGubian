@@ -1,0 +1,31 @@
+@import "materialize";
+@import "global";
+
+.header {
+	background-image: url("/static/img/express/小小直通车，拉近心与心的距离.JPG");
+	@include background-size(cover);
+	height: 400px;
+}
+
+.section {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.section-1, .section-2 {
+	margin-bottom: 0;
+}
+
+.block {
+	.more-link {
+		font-size: 16px;
+	}
+
+	.collection {
+		.collection-item {
+			.row {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

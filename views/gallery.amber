@@ -1,0 +1,22 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/bower_components/normalize.css/normalize.css"]
+	link[rel="stylesheet"][type="text/css"][href="/static/bower_components/magnific-popup/dist/magnific-popup.css"]
+	link[rel="stylesheet"][type="text/css"][href="/static/css/gallery.css"]
+
+block content
+	div.container[role="main"]
+		h2.center 照片墙
+		ul#gallery-container
+			each $p in Photos
+				li.image.z-depth-1
+					a[href=$p.url]
+						img[src=$p.url][width="200"]
+					p #{$p.title}
+
+block scripts
+	script[type="text/javascript"][src="/static/bower_components/imagesloaded/imagesloaded.pkgd.min.js"]
+	script[type="text/javascript"][src="/static/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"]
+	script[type="text/javascript"][src="/static/bower_components/wookmark/wookmark.min.js"]
+	script[type="text/javascript"][src="/static/js/gallery.js"]

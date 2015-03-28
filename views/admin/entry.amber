@@ -1,0 +1,56 @@
+extends admin-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/admin-entry.css"]
+
+block content
+	div.container
+		h2.orange-text.center 文章
+		div.section
+			form[action="/admin/entries/" + PostId][method="POST"]
+				div.row
+					div.input-field.col.s4
+						input#title.validate[type="text"][name="title"][value=Entry.Title]
+						label[for="title"] 标题
+					div.input-field.col.s4
+						input#author.validate[type="text"][name="author"][value=Entry.Author]
+						label[for="author"] 作者
+					div.input-field.col.s4
+						input#date.datepicker[type="date"][placeholder="日期"][name="date"][value=Entry.Date]
+				div.row
+					div.input-field.col.s12
+						textarea#content.materialize-textarea[name="content"] #{Entry.Content}
+						label[for="content"] 正文
+				div.row
+					div.col.s4
+						label 板块
+						$entrySection = Entry.Section
+						select.browser-default[name="section"]
+							option
+								[value="none"]
+								[selected="selected"] ? $entrySection == "none"
+								| 选择板块
+							each $s in Sections
+								option
+									[value=$s.id]
+									[selected="selected"] ? $entrySection == $s.id
+									| #{$s.name}
+				div.row
+					div.col.s4
+						div.input-field
+							$entryStatus = Entry.Status
+							p
+								input#publish.with-gap.valign[name="status"][type="radio"][value="publish"]
+									[checked="checked"] ? $entryStatus == "publish"
+								label.valign[for="publish"] 发布
+							p
+								input#draft.with-gap.valign[name="status"][type="radio"][value="draft"]
+									[checked="checked"] ? $entryStatus == "draft"
+								label.valign[for="draft"] 草稿
+
+				div.row
+					div.col.s12.m4
+						input.btn[type="submit"] 提交
+
+block scripts
+	script[type="text/javascript"][src="/static/js/admin/entry.js"]

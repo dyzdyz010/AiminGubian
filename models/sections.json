@@ -1,0 +1,17 @@
+[{
+	"id": "daily-news",
+	"name": "一日要闻"
+}, {
+	"id": "policies",
+	"name": "上级精神"
+}, {
+	"id": "military",
+	"name": "部队建设"
+}, {
+	"id": "law",
+	"name": "法律知识"
+}, {
+	"id": "life",
+	"name": "生活小常识"
+}
+]

@@ -1,0 +1,19 @@
+extends admin-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/admin-login.css"]
+
+block content
+	div.container
+		h3.center 登录
+		div.section
+			form[action="/admin/login"][method="POST"]
+				div.row
+					div.input-field.col.s6
+						input#name.validate[type="text"][name="name"][value=Username]
+						label[for="name"] 用户名
+					div.input-field.col.s6
+						input#password.validate[type="text"][name="password"]
+						label[for="password"] 密码
+					div.input-field.col.s12.center-align
+						input.btn[type="submit"] 登录

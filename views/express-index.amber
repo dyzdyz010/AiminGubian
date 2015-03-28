@@ -1,0 +1,72 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/index.css"]
+
+block content
+	div.section
+		div.container
+			br
+			br
+			h1.center.orange-text 爱民固边直通车
+
+	div.section
+		br
+		br
+		div.container
+			div.row
+				div.col.s12.m9.l10
+					div#expressIntro.section.scrollspy
+						div.row
+							div.col.s12
+								div.card
+									div.card-image
+										img[src="/static/img/express/map.png"]
+									div.card-content
+										span.card-title.orange-text 简介
+										p “爱民固边直通车”由乌拉特后旗旗委、政府主导，在乌后旗公安边防大队及巴音前达门苏木党委政府的领导下，以公安边防派出所为主要实施单位，以深化“爱民固边战略”及“北疆基层党建长廊”为出发点，本着为民、利民、便民的原则，以巡边控边、掌握社情民意、排查化解矛盾纠纷、解决辖区群众生产生活实际困难为工作目标。由政府补助运营费用，公安边防派出所周期性免费为群众代购米面油盐、应季蔬菜、交通燃料、日常用药等生活资料和兽医兽药等生产资料，降低牧民生活生产成本。同时向牧民群众宣传党的政策、法律法规，提供致富信息，有效提高了派出所的管控能力。进一步促进新时期警政、警民关系，积极构建和谐稳定北部边疆。
+									div.card-action
+										a.modal-trigger[href="#zerenzhuang"] 责任状
+										div#zerenzhuang.modal
+											div.modal-content
+												img[src="/static/img/express/责任状.jpg"][width="100%"]
+										a.modal-trigger[href="#chengnuoshu"] 服务承诺书
+										div#chengnuoshu.modal
+											div.modal-content
+												img[src="/static/img/express/承诺书.jpg"][width="100%"]
+										a.modal-trigger[href="#yunxingcuoshi"] 运行措施
+										div#yunxingcuoshi.modal
+											div.modal-content
+												img[src="/static/img/express/运行措施.jpg"][width="100%"]
+					
+					div#expressBackground.section.scrollspy
+						div.row
+							div.col.s12
+								div.card
+									div.card-content
+										span.card-title.orange-text 背景
+										p 乌拉特后旗巴音前达门苏木地处内蒙古的最北边，牧民大多都住在人烟稀少的地区，多数牧民由于没有方便的交通工具，只能购买一些能够存放时间长的蔬菜过日子。针对这一情况，巴彦淖尔市乌后旗政府将巴音前达门苏木定为试点，为巴音前达门苏木边防派出所购买车辆，进行燃油补贴，让巴音前达门苏木边防派出所专门派出两个人负责为辖区内的嘎查村牧民送米面、蔬菜、燃料及饲草料等牧民们需要的生活日用品，切实改善牧民们的生活条件，乌拉特后旗爱民便民服务队一个月送三次，每个月的10号、20号、30号，送一次物资行程1000多公里。到目前，乌拉特后旗爱民便民服务队共出动13次车辆、26人次，共行程9000多公里，购买3万元的物资，为100多户200多名牧民送去新鲜的蔬菜和面米油等生活用品，极大的方便了边境一线的牧民。
+
+					div#expressRecords.section.scrollspy
+						div.row
+							div.col.s12
+								div.card
+									div.card-content
+										span.card-title.orange-text 运行成果
+										p 乌拉特后旗巴音前达门苏木地处内蒙古的最北边，牧民大多都住在人烟稀少的地区，多数牧民由于没有方便的交通工具，只能购买一些能够存放时间长的蔬菜过日子。针对这一情况，巴彦淖尔市乌后旗政府将巴音前达门苏木定为试点，为巴音前达门苏木边防派出所购买车辆，进行燃油补贴，让巴音前达门苏木边防派出所专门派出两个人负责为辖区内的嘎查村牧民送米面、蔬菜、燃料及饲草料等牧民们需要的生活日用品，切实改善牧民们的生活条件，乌拉特后旗爱民便民服务队一个月送三次，每个月的10号、20号、30号，送一次物资行程1000多公里。到目前，乌拉特后旗爱民便民服务队共出动13次车辆、26人次，共行程9000多公里，购买3万元的物资，为100多户200多名牧民送去新鲜的蔬菜和面米油等生活用品，极大的方便了边境一线的牧民。
+									div.card-action
+										a[href="/express/charts"] 数据统计
+										a[href="/express/timeline"] 时间线
+										a[href="/express/propaganda"] 宣传成果
+
+				div.col.hide-on-small-only.m3.l2.pinmenu
+					ul.section.table-of-contents
+						li
+							a[href="#expressIntro"] 简介
+						li
+							a[href="#expressBackground"] 背景
+						li
+							a[href="#expressRecords"] 运行成果
+
+block scripts
+	script[type="text/javascript"][src="/static/js/express-index.js"]

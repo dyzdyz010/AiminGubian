@@ -1,0 +1,11 @@
+{
+	"name": "AiminGubian",
+	"version": "0.0.1",
+	"private": "true",
+	"dependencies": {
+		"materialize": "Dogfalo/materialize",
+		"imagesloaded": "~3.1.8",
+		"magnific-popup": "~1.0.0",
+		"wookmark": "GBKS/Wookmark-jQuery"
+	}
+}

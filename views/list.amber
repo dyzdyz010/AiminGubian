@@ -1,0 +1,47 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/list.css"]
+
+block content
+	div.container
+		div.section.list-header
+			h1.center 一日要闻
+
+		div.section.list
+			table.bordered
+				thead
+					tr
+						th 标题
+						th 日期
+				tbody
+					tr
+						td
+							a.truncate[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td.date 2014-05-06
+					tr
+						td
+							a.truncate[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td.date 2014-05-06
+					tr
+						td
+							a.truncate[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td.date 2014-05-06
+					tr
+						td
+							a.truncate[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td.date 2014-05-06
+					tr
+						td
+							a.truncate[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td.date 2014-05-06
+					tr
+						td
+							a.truncate[href="#!"] 钢化玻璃全透明 迎广TOU透机箱昆明8888
+						td.date 2014-05-06
+
+			div.pagination
+				a.newer[href="#!"]
+					i.mdi-hardware-keyboard-arrow-left
+				a.older[href="#!"]
+					i.mdi-hardware-keyboard-arrow-right

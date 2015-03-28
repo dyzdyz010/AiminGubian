@@ -1,0 +1,60 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/index.css"]
+
+block content
+	div.section
+		br
+		br
+		div.container
+			h1.center.orange-text 爱民固边直通车运行情况
+
+	//- div.section
+	//- 	br
+	//- 	br
+	//- 	div.container
+	//- 		div.galleria[style="height: 1000px;"]
+	//- 			each $i, $e in Preparation
+	//- 				a[href="$e.url"]
+	//- 					img[src=$e.url][data-big=$e.url][data-title=$e.title][data-description=$e.title][style="width:100px;"]
+
+
+	div.section
+		br
+		br
+		div.container
+			div.row
+				div.col.s12.m9.l10
+					div#preparation.section.scrollspy
+						h3.orange-text 直通车运行前准备工作
+						div.row
+							each $i, $e in Preparation
+								div.col.s12
+									div.card
+										div.card-image
+											img[src=$e.url]
+										div.card-content
+											span.card-title.orange-text #{$e.title}
+
+					div#progress.section.scrollspy
+						h3.orange-text 直通车运行成果
+						div.row
+							each $i, $e in Progress
+								div.col.s12
+									div.card
+										div.card-image
+											img[src=$e.url]
+										div.card-content
+											span.card-title.orange-text #{$e.title}
+
+				div.col.hide-on-small-only.m3.l2.pinmenu
+					ul.section.table-of-contents
+						li
+							a[href="#preparation"] 准备工作
+						li
+							a[href="#progress"] 运行成果
+
+block scripts
+	script[type="text/javascript"][src="/static/js/galleria/galleria-1.4.2.js"]
+	script[type="text/javascript"][src="/static/js/timeline-index.js"]
