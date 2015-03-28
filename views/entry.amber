@@ -13,7 +13,7 @@ block content
 				span.author #{Entry.Author}
 				span |
 				span.date #{Entry.Date}
-			p #{Entry.Content}
+			p #{unescaped(Entry.Content)}
 			//- div.pagination
 			//- 	a.newer[href="#!"]
 			//- 		i.mdi-hardware-keyboard-arrow-left
