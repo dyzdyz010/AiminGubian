@@ -17,12 +17,13 @@ block content
 					ul.collection.with-header
 						li.collection-header
 							h5 #{index(Sections, 0).name}
-								a.secondary-content.more-link[href="#!"] 更多
-						each $e in index(Entries, 0)
-							li.collection-item
-								div.row
-									a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
-									a.secondary-content #{$e.Date}
+								a.secondary-content.more-link[href="/sections/"+index(Sections, 0).id] 更多
+						each $i, $e in index(Entries, 0)
+							if $i < 4
+								li.collection-item
+									div.row
+										a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
+										a.secondary-content #{$e.Date}
 			
 		div.section
 			div.card
@@ -39,13 +40,14 @@ block content
 							ul.collection.with-header
 								li.collection-header
 									h5 #{$s.name}
-										a.secondary-content.more-link[href="#!"] 更多
+										a.secondary-content.more-link[href="/sections/"+$s.id] 更多
 									//- h4 #{$entriesArr}
-								each $e in index($entriesArr, $i)
-									li.collection-item
-										div.row
-											a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
-											a.secondary-content #{$e.Date}
+								each $j, $e in index($entriesArr, $i)
+									if $j < 4
+										li.collection-item
+											div.row
+												a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
+												a.secondary-content #{$e.Date}
 
 
 		div.section

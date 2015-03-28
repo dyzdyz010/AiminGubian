@@ -1,0 +1,28 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/list.css"]
+
+block content
+	div.container
+		div.section.list-header
+			h1.center #{SectionTitle}
+
+		div.section.list
+			table.bordered
+				thead
+					tr
+						th 标题
+						th 日期
+				tbody
+					each $e in Entries
+						tr
+							td
+								a.truncate[href="/entries/"+$e.Id] #{$e.Title}
+							td.date #{$e.Date}
+
+			div.pagination
+				a.newer[href="#!"]
+					i.mdi-hardware-keyboard-arrow-left
+				a.older[href="#!"]
+					i.mdi-hardware-keyboard-arrow-right

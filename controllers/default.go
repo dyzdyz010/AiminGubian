@@ -27,7 +27,7 @@ func (c *MainController) Index() {
 	for _, section := range sections {
 		sid := section["id"].(string)
 		// fmt.Println(section, entriesMap)
-		entries, err := models.EntriesBySection(sid)
+		entries, err := models.PublishedEntriesBySection(sid)
 		if err != nil {
 			panic(err)
 		}
@@ -46,11 +46,39 @@ func (c *MainController) Index() {
 }
 
 func (c *MainController) Section() {
-	renderTemplate(c.Ctx, "views/list.amber", c.Data)
+	sid := c.Ctx.Input.Param(":id")
+	entries, err := models.PublishedEntriesBySection(sid)
+	if err != nil {
+		panic(err)
+	}
+	file, err := ioutil.ReadFile("models/sections.json")
+	if err != nil {
+		panic(err)
+	}
+	c.Data["Entries"] = entries
+	sections := make([]map[string]interface{}, 0)
+	json.Unmarshal(file, &sections)
+	for _, section := range sections {
+		sectionId := section["id"].(string)
+		// fmt.Println(section)
+		if sectionId == sid {
+			c.Data["SectionTitle"] = section["name"]
+		}
+	}
+	// fmt.Println(c.Data)
+
+	renderTemplate(c.Ctx, "views/section.amber", c.Data)
 }
 
 func (c *MainController) Entry() {
-	renderTemplate(c.Ctx, "views/detail.amber", c.Data)
+	eid := c.Ctx.Input.Param(":id")
+	entry, err := models.EntryById(eid)
+	if err != nil {
+		panic(err)
+	}
+	c.Data["Entry"] = entry
+
+	renderTemplate(c.Ctx, "views/entry.amber", c.Data)
 }
 
 func (c *MainController) HostIntro() {

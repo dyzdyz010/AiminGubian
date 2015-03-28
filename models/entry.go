@@ -52,6 +52,42 @@ func AllEntries() ([]Entry, error) {
 	return entries, nil
 }
 
+func PublishedEntriesBySection(sid string) ([]Entry, error) {
+	size, err := db.Zsize(zname("published", "entry"))
+	if err != nil {
+		return nil, err
+	}
+	result, err := db.Zscan(zname("published", "entry"), "", "", "", size)
+	if err != nil {
+		return nil, err
+	}
+
+	eids := make([]string, 0)
+	for i := len(result) - 2; i >= 0; i -= 2 {
+		eids = append(eids, result[i])
+	}
+	if len(eids) == 0 {
+		return nil, nil
+	}
+
+	result, err = db.Multi_hget(h_entry, eids)
+	if err != nil {
+		return nil, err
+	}
+
+	entries := []Entry{}
+	for i := 1; i < len(result); i += 2 {
+		entryStr := result[i]
+		entry := Entry{}
+		json.Unmarshal([]byte(entryStr), &entry)
+		if entry.Section == sid {
+			entries = append(entries, entry)
+		}
+	}
+
+	return entries, nil
+}
+
 func EntriesBySection(sid string) ([]Entry, error) {
 	size, err := db.Zsize(zname(sid, "entry"))
 	if err != nil {

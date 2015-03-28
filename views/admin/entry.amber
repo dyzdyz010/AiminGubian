@@ -40,8 +40,8 @@ block content
 						div.input-field
 							$entryStatus = Entry.Status
 							p
-								input#publish.with-gap.valign[name="status"][type="radio"][value="publish"]
-									[checked="checked"] ? $entryStatus == "publish"
+								input#publish.with-gap.valign[name="status"][type="radio"][value="published"]
+									[checked="checked"] ? $entryStatus == "published"
 								label.valign[for="publish"] 发布
 							p
 								input#draft.with-gap.valign[name="status"][type="radio"][value="draft"]

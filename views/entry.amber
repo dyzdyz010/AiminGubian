@@ -1,0 +1,21 @@
+extends front-layout
+
+block stylesheets
+	link[rel="stylesheet"][type="text/css"][href="/static/css/detail.css"]
+
+block content
+	div.container
+		div.section.detail-header
+			h3.center #{Entry.Title}
+
+		div.section.detail
+			div.row.meta.center-align
+				span.author #{Entry.Author}
+				span |
+				span.date #{Entry.Date}
+			p #{Entry.Content}
+			//- div.pagination
+			//- 	a.newer[href="#!"]
+			//- 		i.mdi-hardware-keyboard-arrow-left
+			//- 	a.older[href="#!"]
+			//- 		i.mdi-hardware-keyboard-arrow-right
