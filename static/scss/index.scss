@@ -1,6 +1,13 @@
 @import "materialize";
 @import "global";
 
+
+body {
+	background-image: url("/static/img/express/xinyuxin.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .header {
 	background-image: url("/static/img/express/xinyuxin.jpg");
 	@include background-size(cover);
