@@ -7,8 +7,10 @@ html
 
 	body
 		nav
-			div.nav-wrapper.container
-				a.brand-logo[href="/"] 中国边防
+			div.nav-wrapper
+				a.brand-logo.hide-on-med-and-down[href="/"] 巴彦淖尔市爱民固边直通车
+					span 继承发扬爱民传统 携手共筑北疆长城
+				a.brand-logo.hide-on-large-only[href="/"] 巴彦淖尔爱民固边
 				a.button-collapse[href="#"][data-activates="mobile"]
 					i.mdi-navigation-menu
 				ul#nav-mobile.right.hide-on-med-and-down
