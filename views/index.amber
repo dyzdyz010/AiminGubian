@@ -8,7 +8,7 @@ block content
 	//- 	div.container
 	//- 		h1.center.orange-text 巴彦淖尔市爱民固边直通车
 	//- 		div.row.center
-	//- 			h5.col.s12 继承发扬爱民传统 携手共筑北疆长城
+	//- h3.col.s12.orange-text.center 继承发扬爱民传统 携手共筑北疆长城
 
 	div.index-container
 		div.section

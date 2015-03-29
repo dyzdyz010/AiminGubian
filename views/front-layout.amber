@@ -9,7 +9,7 @@ html
 		nav
 			div.nav-wrapper
 				a.brand-logo.hide-on-med-and-down[href="/"] 巴彦淖尔市爱民固边直通车
-					span 继承发扬爱民传统 携手共筑北疆长城
+					span[style="font-size:25px;"] 继承发扬爱民传统 携手共筑北疆长城
 				a.brand-logo.hide-on-large-only[href="/"] 巴彦淖尔爱民固边
 				a.button-collapse[href="#"][data-activates="mobile"]
 					i.mdi-navigation-menu
