@@ -10,10 +10,10 @@ block content
 	//- 		div.row.center
 	//- 			h5.col.s12 继承发扬爱民传统 携手共筑北疆长城
 
-	div.container
+	div.index-container
 		div.section
 			div.row.section-1
-				div.col.s12.block
+				div.col.s6.block
 					ul.collection.with-header
 						li.collection-header
 							h5 #{index(Sections, 0).name}
@@ -24,6 +24,18 @@ block content
 									div.row
 										a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
 										a.secondary-content #{$e.Date}
+				div.col.s6.block
+					ul.collection.with-header
+						li.collection-header
+							h5 #{index(Sections, 1).name}
+								a.secondary-content.more-link[href="/sections/"+index(Sections, 0).id] 更多
+						each $i, $e in index(Entries, 1)
+							if $i < 4
+								li.collection-item
+									div.row
+										a.truncate.col.s9.m7.l8[href="/entries/"+$e.Id] #{$e.Title}
+										a.secondary-content #{$e.Date}
+
 			
 		div.section
 			div.card
@@ -35,8 +47,8 @@ block content
 			div.row.section-2
 				$entriesArr = Entries
 				each $i, $s in Sections
-					if $i != 0 
-						div.col.s12.m6.block
+					if $i >1 
+						div.col.s6.m4.block
 							ul.collection.with-header
 								li.collection-header
 									h5 #{$s.name}
