@@ -27,7 +27,7 @@ block content
 						each $e in Entries
 							tr
 								td
-									a.truncate[href="/admin/entries/"+$e.Id] #{$e.Title}
+									a[href="/admin/entries/"+$e.Id] #{$e.Title}
 								td #{$e.Date}
 								$key = $e.Section
 								each $s in $sections
