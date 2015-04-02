@@ -17,7 +17,7 @@ block content
 				table.bordered
 					thead
 						tr
-							th 名称
+							th.entry-title 名称
 							th 日期
 							th 板块
 							th 状态
