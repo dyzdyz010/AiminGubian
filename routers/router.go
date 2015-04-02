@@ -22,4 +22,7 @@ func init() {
 	beego.Router("/admin/entries/:id", &controllers.AdminController{}, "get:Entry;post:PostEntry")
 	beego.Router("/admin/entries/delete", &controllers.AdminController{}, "get:DeleteEntry")
 	beego.Router("/admin/broadcast", &controllers.AdminController{}, "post:PostBroadcast")
+
+	// Qiniu Token
+	beego.Router("/admin/qiniu/tokens", &controllers.AdminController{}, "get:QiniuToken")
 }

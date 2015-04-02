@@ -53,4 +53,5 @@ block content
 						input.btn[type="submit"] 提交
 
 block scripts
+	script[type="text/javascript"][src="/static/js/admin/image-uploader.js"]
 	script[type="text/javascript"][src="/static/js/admin/entry.js"]

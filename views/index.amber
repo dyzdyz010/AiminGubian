@@ -64,21 +64,16 @@ block content
 
 		div.section
 			div.row
-				div.col.s6.m4
+				div.col.s6
 					a.teal-text.gallery-link[href="/gallery"]
 						h2.center
 							i.mdi-image-collections
 					h4.center 工作剪影
-				div.col.s6.m4
+				div.col.s6
 					a.charts-link[href="/express/charts"]
 						h2.center
 							i.mdi-editor-insert-chart
 					h4.center 数据统计
-				div.col.s6.m4
-					a.red-text[href="#!"]
-						h2.center
-							i.mdi-action-assignment
-					h4.center 走访纪录
 				//- div.col.s12.m6
 				//- 	h2.center.light-blue-text
 				//- 		i.mdi-action-account-balance
