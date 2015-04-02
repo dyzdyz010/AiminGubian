@@ -6,6 +6,7 @@
 		"materialize": "Dogfalo/materialize",
 		"imagesloaded": "~3.1.8",
 		"magnific-popup": "~1.0.0",
-		"wookmark": "GBKS/Wookmark-jQuery"
+		"wookmark": "GBKS/Wookmark-jQuery",
+		"marked": "chjj/marked"
 	}
 }

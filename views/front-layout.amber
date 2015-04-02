@@ -8,27 +8,27 @@ html
 	body
 		nav
 			div.nav-wrapper
-				a.brand-logo.hide-on-med-and-down[href="/"] 巴彦淖尔市爱民固边直通车
-					span[style="font-size:25px;"] 继承发扬爱民传统 携手共筑北疆长城
-				a.brand-logo.hide-on-large-only[href="/"] 巴彦淖尔爱民固边
-				a.button-collapse[href="#"][data-activates="mobile"]
-					i.mdi-navigation-menu
-				ul#nav-mobile.right.hide-on-med-and-down
-					li
-						a[href="/host"] 派出所简介
-					li
-						a[href="/express"] 直通车
-					li
-						a[href="/gallery"] 照片墙
-					li
-						a[href="/admin"]控制台
-				ul#mobile.side-nav
-					li
-						a[href="/host"] 派出所简介
-					li
-						a[href="/express"] 直通车
-					li
-						a[href="/express/gallery"] 照片墙
+				div
+					a.brand-logo.hide-on-med-and-down[href="/"] 中国边防
+					a.brand-logo.hide-on-large-only[href="/"] 巴彦淖尔爱民固边
+					a.button-collapse[href="#"][data-activates="mobile"]
+						i.mdi-navigation-menu
+					ul#nav-mobile.right.hide-on-med-and-down
+						li
+							a[href="/host"] 派出所简介
+						li
+							a[href="/express"] 直通车
+						li
+							a[href="/gallery"] 照片墙
+						li
+							a[href="/admin"]控制台
+					ul#mobile.side-nav
+						li
+							a[href="/host"] 派出所简介
+						li
+							a[href="/express"] 直通车
+						li
+							a[href="/express/gallery"] 照片墙
 
 		block content
 

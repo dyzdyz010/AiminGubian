@@ -13,9 +13,13 @@ block content
 				span.author #{Entry.Author}
 				span |
 				span.date #{Entry.Date}
-			p #{unescaped(Entry.Content)}
+			p.entry-content #{Entry.Content}
 			//- div.pagination
 			//- 	a.newer[href="#!"]
 			//- 		i.mdi-hardware-keyboard-arrow-left
 			//- 	a.older[href="#!"]
 			//- 		i.mdi-hardware-keyboard-arrow-right
+
+block scripts
+	script[type="text/javascript"][src="/static/bower_components/marked/marked.min.js"]
+	script[type="text/javascript"][src="/static/js/entry.js"]
