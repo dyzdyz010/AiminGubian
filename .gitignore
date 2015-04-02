@@ -25,6 +25,7 @@ _testmain.go
 AiminGubian
 .DS_Store
 
+/conf/site.json
 /static/bower_components/*
 /.sass-cache/*
 *.DS_Store
