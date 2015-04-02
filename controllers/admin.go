@@ -13,7 +13,7 @@ type AdminController struct {
 }
 
 func (c *AdminController) Prepare() {
-	// checkLogin(c)
+	checkLogin(c)
 }
 
 func checkLogin(c *AdminController) {
