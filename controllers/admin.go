@@ -6,6 +6,8 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/dyzdyz010/AiminGubian/models"
 	"github.com/qiniu/api/rs"
+	"strconv"
+	"time"
 )
 
 type AdminController struct {
@@ -98,12 +100,31 @@ func (c *AdminController) Entry() {
 }
 
 func (c *AdminController) PostEntry() {
-	fmt.Println(string(c.Ctx.Input.RequestBody))
 	entry := models.Entry{}
 	err := c.ParseForm(&entry)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(entry.Date == "")
+	if entry.Date == "" {
+		t := time.Now()
+		yStr := strconv.Itoa(t.Year())
+		mStr := ""
+		if int(t.Month()) < 10 {
+			mStr = "0" + strconv.Itoa(int(t.Month()))
+		} else {
+			mStr = strconv.Itoa(int(t.Month()))
+		}
+		dStr := ""
+		if t.Day() < 10 {
+			dStr = "0" + strconv.Itoa(t.Day())
+		} else {
+			dStr = strconv.Itoa(t.Day())
+		}
+		dateStr := yStr + "-" + mStr + "-" + dStr
+		entry.Date = dateStr
+	}
+	fmt.Println(entry.Date)
 	eid := c.Ctx.Input.Param(":id")
 	err = nil
 	if eid == "new" {

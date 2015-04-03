@@ -50,7 +50,7 @@ block content
 
 				div.row
 					div.col.s12.m4
-						input.btn[type="submit"] 提交
+						input#submit-btn.btn[type="submit"] 提交
 
 block scripts
 	script[type="text/javascript"][src="/static/js/admin/image-uploader.js"]
