@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
+	// "fmt"
 	"github.com/astaxie/beego"
 	"github.com/dyzdyz010/AiminGubian/models"
 	"io/ioutil"
@@ -33,7 +33,7 @@ func (c *MainController) Index() {
 		}
 		entriesArr = append(entriesArr, entries)
 	}
-	fmt.Println(entriesArr)
+	// fmt.Println(entriesArr)
 	c.Data["Entries"] = entriesArr
 
 	bc, err := models.GetBroadcast()
