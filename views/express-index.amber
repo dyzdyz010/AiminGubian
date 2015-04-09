@@ -29,15 +29,15 @@ block content
 										a.modal-trigger[href="#zerenzhuang"] 责任状
 										div#zerenzhuang.modal
 											div.modal-content
-												img[src="/static/img/express/责任状.jpg"][width="100%"]
+												img[src="/static/img/express/zerenzhuang.jpg"][width="100%"]
 										a.modal-trigger[href="#chengnuoshu"] 服务承诺书
 										div#chengnuoshu.modal
 											div.modal-content
-												img[src="/static/img/express/承诺书.jpg"][width="100%"]
+												img[src="/static/img/express/chengnuoshu.jpg"][width="100%"]
 										a.modal-trigger[href="#yunxingcuoshi"] 运行措施
 										div#yunxingcuoshi.modal
 											div.modal-content
-												img[src="/static/img/express/运行措施.jpg"][width="100%"]
+												img[src="/static/img/express/cuoshi.jpg"][width="100%"]
 					
 					div#expressBackground.section.scrollspy
 						div.row
